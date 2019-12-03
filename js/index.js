@@ -48,6 +48,23 @@ const timer = (function () {
         }, 1000);
     }
 
+    function displayTimeLeft(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const reminderSeconds = seconds % 60;
+
+        const display = `${minutes}:${reminderSeconds < 10 ? '0' : ''}${reminderSeconds}`;
+        document.title = display;
+        timerDisplay.textContent = display;
+    }
+
+    function displayEndTime(timestamp) {
+        const end = new Date(timestamp);
+        const hour = end.getHours();
+        const minutes = end.getMinutes();
+
+        endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}${minutes}`;
+    }
+
     function stop () {}
 
     function playSound() {
