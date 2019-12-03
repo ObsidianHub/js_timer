@@ -84,3 +84,17 @@ timer.init({
     alarmSound: 'audio/bell.mp3'
 })
 
+// start timer by click
+function startTimer(e) {
+    const seconds = parseInt(this.dataset.time);
+    timer.start(seconds);
+}
+
+function startTimerFromInput(e) {
+    e.preventDefault();
+    const seconds = inputMinutes.value * 60;
+    timer.start(seconds);
+}
+
+buttons.forEach(btn => btn.addEventListener('click', startTimer));
+form.addEventListener('submit', startTimerFromInput);
