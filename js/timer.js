@@ -33,3 +33,11 @@ timer.init({
   timeEndSelector: ".display__end-time",
   alarmSound: "audio/bell.mp3",
 });
+
+// start timer by click
+function startTimer(e) {
+  const seconds = parseInt(this.dataset.time);
+  timer.start(seconds);
+}
+
+buttons.forEach((btn) => btn.addEventListener("click", startTimer));
