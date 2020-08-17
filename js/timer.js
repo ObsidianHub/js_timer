@@ -5,6 +5,14 @@ const buttons = document.querySelectorAll("[data-time]"),
 const timer = (function () {
   let countdown, timerDisplay, endTime, alarmSound;
 
+  function init(settings) {}
+
+  function start(seconds) {}
+
+  function displayTimeLeft(seconds) {}
+
+  function displayEndTime(timestamp) {}
+
   return {
     init,
     start,
