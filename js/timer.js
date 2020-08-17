@@ -3,6 +3,8 @@ const buttons = document.querySelectorAll("[data-time]"),
   inputMinutes = form.elements["minutes"];
 
 const timer = (function () {
+  let countdown, timerDisplay, endTime, alarmSound;
+
   return {
     init,
     start,
