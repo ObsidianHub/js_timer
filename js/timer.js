@@ -32,6 +32,18 @@ const timer = (function () {
 
     displayTimeLeft(seconds);
     displayEndTime(then);
+
+    countdown = setInterval(() => {
+      const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+      if (secondsLeft < 0) {
+        clearInterval(countdown);
+        playSound();
+        return;
+      }
+
+      displayTimeLeft(secondsLeft);
+    }, 1000);
   }
 
   function displayTimeLeft(seconds) {
