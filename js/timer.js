@@ -26,6 +26,12 @@ const timer = (function () {
       alarmSound.pause();
       alarmSound.currentTime = 0;
     }
+
+    const now = Date.now();
+    const then = now + seconds * 1000;
+
+    displayTimeLeft(seconds);
+    displayEndTime(then);
   }
 
   function displayTimeLeft(seconds) {}
