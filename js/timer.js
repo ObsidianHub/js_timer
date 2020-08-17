@@ -93,4 +93,11 @@ function startTimer(e) {
   timer.start(seconds);
 }
 
+function startTimerFromInput(e) {
+  e.preventDefault();
+  const seconds = inputMinutes.value * 60;
+  timer.start(seconds);
+}
+
 buttons.forEach((btn) => btn.addEventListener("click", startTimer));
+form.addEventListener("submit", startTimerFromInput);
