@@ -67,6 +67,12 @@ const timer = (function () {
     }${minutes}`;
   }
 
+  function stop() {}
+
+  function playSound() {
+    alarmSound.play();
+  }
+
   return {
     init,
     start,
