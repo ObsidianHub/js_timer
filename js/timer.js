@@ -19,6 +19,13 @@ const timer = (function () {
       return console.log("Please init module first.");
     if (!seconds || typeof seconds !== "number")
       return console.log("Please provide seconds.");
+
+    clearInterval(countdown);
+
+    if (alarmSound) {
+      alarmSound.pause();
+      alarmSound.currentTime = 0;
+    }
   }
 
   function displayTimeLeft(seconds) {}
