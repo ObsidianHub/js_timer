@@ -26,3 +26,10 @@ const timer = (function () {
     stop,
   };
 })();
+
+// init timer
+timer.init({
+  timeLeftSelector: ".display__time-left",
+  timeEndSelector: ".display__end-time",
+  alarmSound: "audio/bell.mp3",
+});
