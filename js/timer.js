@@ -14,7 +14,12 @@ const timer = (function () {
     }
   }
 
-  function start(seconds) {}
+  function start(seconds) {
+    if (!timerDisplay || !endTime)
+      return console.log("Please init module first.");
+    if (!seconds || typeof seconds !== "number")
+      return console.log("Please provide seconds.");
+  }
 
   function displayTimeLeft(seconds) {}
 
